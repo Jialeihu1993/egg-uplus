@@ -21,7 +21,7 @@ exports.ejs = {
 };
 
 exports.auth = {
-  enable: false,
+  enable: true,
   path: path.join(__dirname, '../lib/plugin/egg-auth'),
 };
 
@@ -38,4 +38,9 @@ exports.mysql = {
 exports.sequelize = {
   enable: true,
   package: 'egg-sequelize',
+};
+
+exports.jwt = {
+  enable: true,
+  package: 'egg-jwt',
 };

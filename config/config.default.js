@@ -23,7 +23,7 @@ module.exports = appInfo => {
   };
 
   config.auth = {
-    exclude: [ '/home', '/user', '/login', '/logot' ],
+    exclude: [ '/api/user/login', '/api/user/register' ],
   };
   config.security = {
     csrf: {
@@ -54,6 +54,10 @@ module.exports = appInfo => {
       timestamps: false,
       freezeTableName: true,
     },
+  };
+
+  config.jwt = {
+    secret: 'muke',
   };
 
   config.view = {
