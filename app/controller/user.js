@@ -9,16 +9,26 @@ class UserController extends Controller {
     const { app, ctx } = this;
     const username = ctx.request.body.username;
     const token = app.jwt.sign({ username }, app.config.jwt.secret);
-    ctx.session[username] = 1;
+    // ctx.session[username] = 1;
+    // await ctx.redis.set(username, 1, 'EX', 5);
+    await ctx.redis.set(username, 1, 'EX', app.config.redisExpire);
     return token;
   }
   async registry() {
     const { ctx, app } = this;
-    // console.log('===', ctx.request.body);
+    // console.log('===', ctx.request.body);cl
     const token = await this.jwtSign();
     const params = ctx.request.body;
+    console.log(ctx);
+    if (!params.username) {
+      ctx.body = {
+        status: 500,
+        errMsg: '参数有误',
+      };
+      return;
+    }
     const user = await ctx.service.user.getUser(params.username);
-
+    console.log(user);
     if (user) {
       ctx.body = {
         status: 500,
@@ -57,7 +67,9 @@ class UserController extends Controller {
     console.log('user', user, user.id);
     if (user) {
       // ctx.session.userId = user.dataValues.id;
-      ctx.session.username = 1;
+      // ctx.session.username = 1;
+      console.log(app.redis);
+      await app.redis.set(params.username, 1, 'EX', app.config.redisExpire);
       const token = app.jwt.sign({ username: params.username }, app.config.jwt.secret);
       ctx.session[params.username] = 1;
       ctx.body = {

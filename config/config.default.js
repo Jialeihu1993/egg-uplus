@@ -78,6 +78,15 @@ module.exports = appInfo => {
     dir: path.join(appInfo.baseDir, '/app/public/'),
   };
 
+  config.redis = {
+    client: {
+      port: 6379,
+      host: '127.0.0.1',
+      password: 'abc123456',
+      db: 0,
+    },
+  };
+
   config.session = {
     key: 'XINGYE',
     httpOnly: true,
@@ -89,6 +98,7 @@ module.exports = appInfo => {
   const userConfig = {
     // myAppName: 'egg',
     salt: 'muke',
+    redisExpire: 60 * 60 * 24,
   };
 
 
