@@ -2,7 +2,7 @@
 module.exports = app => {
   const { STRING, INTEGER, DATE } = app.Sequelize;
 
-  const Imgs = app.model.define('house', {
+  const Imgs = app.model.define('imgs', {
     id: {
       type: INTEGER,
       primaryKey: true,

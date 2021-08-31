@@ -11,17 +11,20 @@ module.exports = app => {
     name: STRING(50),
     info: STRING(150),
     addres: STRING(300),
-    priceL: INTEGER,
-    publicTime: DATE,
+    price: INTEGER,
+    publishTime: DATE,
     cityCode: STRING,
     showCount: INTEGER,
-    startDate: DATE,
+    startTime: DATE,
     endTime: DATE,
   });
   // 一个房子对应多个图片 hasMany
-  House.assoiate = () => [
+  House.associate = () => [
     app.model.House.hasMany(app.model.Imgs, {
-      foreignKey: 'houseid',
+      foreignKey: 'houseId',
+      include: [{
+        model: app.model.Imgs,
+      }],
     }),
   ];
   return House;
