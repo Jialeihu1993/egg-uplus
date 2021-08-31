@@ -1,24 +1,34 @@
 'use strict';
 
-const Controller = require('egg').Controller;
+// const Controller = require('egg').Controller;
 const MD5 = require('md5');
+const BaseController = require('./base');
 // const dayjs = require('dayjs');
 
-class UserController extends Controller {
+class UserController extends BaseController {
   async jwtSign() {
     const { app, ctx } = this;
-    const username = ctx.request.body.username;
+    // 优化
+    // const username = ctx.request.body.username;
+    const username = ctx.params('username');
     const token = app.jwt.sign({ username }, app.config.jwt.secret);
     // ctx.session[username] = 1;
     // await ctx.redis.set(username, 1, 'EX', 5);
-    await ctx.redis.set(username, 1, 'EX', app.config.redisExpire);
+    await ctx.redis.set(username, token, 'EX', app.config.redisExpire);
     return token;
+  }
+  parseResult(ctx, result) {
+    return {
+      ...ctx.helper.unPick(result.dataValues, [ 'password' ]),
+      createTime: ctx.helper.timestamp(result.createTime),
+    };
   }
   async registry() {
     const { ctx, app } = this;
     // console.log('===', ctx.request.body);cl
     const token = await this.jwtSign();
-    const params = ctx.request.body;
+    //  const params = ctx.request.body;
+    const params = ctx.params();
     console.log(ctx);
     if (!params.username) {
       ctx.body = {
@@ -44,19 +54,24 @@ class UserController extends Controller {
     });
     // console.log('+++++++++', reslut);
     if (reslut) {
-      ctx.body = {
-        status: 200,
-        data: {
-          ...ctx.helper.unPick(reslut.dataValues, [ 'password' ]),
-          createTime: ctx.helper.timestamp(reslut.createTime),
-          token,
-        },
-      };
+      // ctx.body = {
+      //   status: 200,
+      //   data: {
+      //     ...ctx.helper.unPick(reslut.dataValues, [ 'password' ]),
+      //     createTime: ctx.helper.timestamp(reslut.createTime),
+      //     token,
+      //   },
+      // };
+      this.success({
+        ...this.parseResult(ctx, reslut),
+        token,
+      });
     } else {
-      ctx.body = {
-        status: 500,
-        errorMsg: '注册用户失败',
-      };
+      this.error('注册用户失败');
+      // ctx.body = {
+      //   status: 500,
+      //   errorMsg: '注册用户失败',
+      // };
     }
   }
 
@@ -64,17 +79,18 @@ class UserController extends Controller {
     const { ctx, app } = this;
     const params = ctx.request.body;
     const user = await ctx.service.user.getUser(params.username, params.password);
-    console.log('user', user, user.id);
+    console.log('user', user);
     if (user) {
       // ctx.session.userId = user.dataValues.id;
       // ctx.session.username = 1;
       console.log(app.redis);
-      await app.redis.set(params.username, 1, 'EX', app.config.redisExpire);
       const token = app.jwt.sign({ username: params.username }, app.config.jwt.secret);
-      ctx.session[params.username] = 1;
+      await app.redis.set(params.username, token, 'EX', app.config.redisExpire);
+      // ctx.session[params.username] = 1;
       ctx.body = {
         status: 200,
         data: {
+          // ...this.parseResult(ctx, user),
           ...ctx.helper.unPick(user.dataValues, [ 'password' ]),
           createTime: ctx.helper.timestamp(user.createTime),
           token,
@@ -121,6 +137,16 @@ class UserController extends Controller {
         errorMsg: '退出登陆失败',
       };
     }
+  }
+
+  async edit() {
+    const { ctx } = this;
+    console.log('hhhh', ctx.params());
+    const res = ctx.service.user.edit({
+      ...ctx.params(),
+      updateTime: ctx.helper.time(),
+    });
+    this.success(res);
   }
 }
 

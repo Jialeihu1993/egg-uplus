@@ -1,20 +1,29 @@
 'use strict';
-const Service = require('egg').Service;
+// const Service = require('egg').Service;
 const md5 = require('md5');
+const BaseService = require('./base');
 
-class UserService extends Service {
+class UserService extends BaseService {
   async getUser(username, password) {
-    try {
+    return this.run(async () => {
       const { ctx, app } = this;
       const _where = password ? { username, password: md5(password + app.config.salt) } : { username };
       const result = await ctx.model.User.findOne({
         where: _where,
       });
       return result;
-    } catch (error) {
-      console.log(error);
-      return null;
-    }
+    });
+    // try {
+    //   const { ctx, app } = this;
+    //   const _where = password ? { username, password: md5(password + app.config.salt) } : { username };
+    //   const result = await ctx.model.User.findOne({
+    //     where: _where,
+    //   });
+    //   return result;
+    // } catch (error) {
+    //   console.log(error);
+    //   return null;
+    // }
 
   }
 
@@ -28,6 +37,17 @@ class UserService extends Service {
       console.log(error);
       return null;
     }
+  }
+  async edit(params) {
+    return this.run(async ctx => {
+      console.log(ctx, ctx.username);
+      const result = await ctx.model.User.update(params, {
+        where: {
+          username: ctx.username,
+        },
+      });
+      return result;
+    });
   }
 }
 
