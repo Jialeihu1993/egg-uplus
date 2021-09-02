@@ -547,3 +547,50 @@ Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/hot","data":{"avatar":
 Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/hot","data":{"avatar":"data:image/jpeg;base64,/9j/4S/+RXhpZgAATU0AKgAAAA","sign":"hjl12","phone":"1234445"},"startTime":"2021-08-31 23:16:31","endTime":"2021-08-31 23:16:31","timeLength":28}
 Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/hot","data":{"avatar":"data:image/jpeg;base64,/9j/4S/+RXhpZgAATU0AKgAAAA","sign":"hjl12","phone":"1234445"},"startTime":"2021-08-31 23:17:09","endTime":"2021-08-31 23:17:09","timeLength":28}
 Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/hot","data":{"avatar":"data:image/jpeg;base64,/9j/4S/+RXhpZgAATU0AKgAAAA","sign":"hjl12","phone":"1234445"},"startTime":"2021-08-31 23:17:23","endTime":"2021-08-31 23:17:23","timeLength":58}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/search","data":{"avatar":"data:image/jpeg;base64,/9j/4S/+RXhpZgAATU0AKgAAAA","sign":"hjl12","phone":"1234445"},"startTime":"2021-08-31 23:28:07","endTime":"2021-08-31 23:28:07","timeLength":25}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/search","data":{"code":"100001","startTime":"2020-08-02 15:10:10","endTime":"2020-08-03 15:10:10","pageNum":1,"pageSize":1},"startTime":"2021-08-31 23:44:51","endTime":"2021-08-31 23:44:59","timeLength":8344}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/search","data":{"code":"100001","startTime":"2020-08-02 15:10:10","endTime":"2020-08-03 15:10:10","pageNum":1,"pageSize":4},"startTime":"2021-08-31 23:46:28","endTime":"2021-08-31 23:46:28","timeLength":20}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/search","data":{"code":"100001","startTime":"2020-08-02 15:10:10","endTime":"2020-08-03 15:10:10","pageNum":2,"pageSize":4},"startTime":"2021-08-31 23:46:38","endTime":"2021-08-31 23:46:38","timeLength":13}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/search","data":{"code":"100001","startTime":"2020-08-02 15:10:10","endTime":"2020-08-03 15:10:10","pageNum":3,"pageSize":4},"startTime":"2021-08-31 23:46:56","endTime":"2021-08-31 23:46:56","timeLength":34}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/search","data":{"code":"100001","startTime":"2020-08-02 15:10:10","endTime":"2020-08-03 15:10:10","pageNum":3,"pageSize":4},"startTime":"2021-08-31 23:46:58","endTime":"2021-08-31 23:46:58","timeLength":16}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/search","data":{"code":"100001","startTime":"2020-08-02 15:10:10","endTime":"2020-08-03 15:10:10","pageNum":3,"pageSize":4},"startTime":"2021-08-31 23:47:00","endTime":"2021-08-31 23:47:00","timeLength":19}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/commons/citys","data":{},"startTime":"2021-09-01 11:27:17","endTime":"2021-09-01 11:27:17","timeLength":22}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/hot","data":{},"startTime":"2021-09-01 11:27:17","endTime":"2021-09-01 11:27:18","timeLength":43}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/user/details","data":{},"startTime":"2021-09-01 11:27:26","endTime":"2021-09-01 11:27:26","timeLength":18}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/commons/citys","data":{},"startTime":"2021-09-01 11:27:27","endTime":"2021-09-01 11:27:27","timeLength":7}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/hot","data":{},"startTime":"2021-09-01 11:27:27","endTime":"2021-09-01 11:27:27","timeLength":14}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/search","data":{"code":"100001","startTime":"2020-08-02 15:10:10","endTime":"2020-08-03 15:10:10","pageNum":1,"pageSize":4},"startTime":"2021-09-01 11:56:36","endTime":"2021-09-01 11:56:36","timeLength":32}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/user/login","data":{"username":"admin","password":"123456"},"startTime":"2021-09-02 10:10:58","endTime":"2021-09-02 10:10:58","timeLength":95}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/commons/citys","data":{},"startTime":"2021-09-02 10:10:58","endTime":"2021-09-02 10:10:58","timeLength":11}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/hot","data":{},"startTime":"2021-09-02 10:10:58","endTime":"2021-09-02 10:10:58","timeLength":41}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/details","data":{"id":1},"startTime":"2021-09-02 10:11:28","endTime":"2021-09-02 10:11:28","timeLength":23}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/details","data":{"id":1},"startTime":"2021-09-02 10:12:49","endTime":"2021-09-02 10:12:49","timeLength":25}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/commons/citys","data":{},"startTime":"2021-09-02 16:50:24","endTime":"2021-09-02 16:50:24","timeLength":41}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/hot","data":{},"startTime":"2021-09-02 16:50:24","endTime":"2021-09-02 16:50:25","timeLength":194}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/commons/citys","data":{},"startTime":"2021-09-02 21:11:59","endTime":"2021-09-02 21:11:59","timeLength":13}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/hot","data":{},"startTime":"2021-09-02 21:11:59","endTime":"2021-09-02 21:11:59","timeLength":82}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/house/details","data":{"id":1},"startTime":"2021-09-02 21:45:52","endTime":"2021-09-02 21:45:52","timeLength":32}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/add","data":{"userId":1,"houseId":2,"msg":"hhhh"},"startTime":"2021-09-02 21:50:23","endTime":"2021-09-02 21:50:23","timeLength":47}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/add","data":{"userId":1,"houseId":2,"msg":"hhhh"},"startTime":"2021-09-02 22:47:32","endTime":"2021-09-02 22:47:32","timeLength":75}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/add","data":{"houseId":2,"msg":"hhhh"},"startTime":"2021-09-02 22:50:03","endTime":"2021-09-02 22:50:03","timeLength":28}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/add","data":{"houseId":1,"msg":"hhhh"},"startTime":"2021-09-02 22:50:29","endTime":"2021-09-02 22:50:29","timeLength":19}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/add","data":{"houseId":1,"msg":"hhhh"},"startTime":"2021-09-02 22:55:56","endTime":"2021-09-02 22:55:56","timeLength":30}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/add","data":{"houseId":1,"msg":"hhhh"},"startTime":"2021-09-02 22:57:51","endTime":"2021-09-02 22:57:51","timeLength":44}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/add","data":{"houseId":1,"msg":"hhhh"},"startTime":"2021-09-02 22:57:53","endTime":"2021-09-02 22:57:53","timeLength":13}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/add","data":{"houseId":1,"msg":"hhhh"},"startTime":"2021-09-02 23:17:36","endTime":"2021-09-02 23:17:36","timeLength":20}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":8,"pageNum":1},"startTime":"2021-09-02 23:34:21","endTime":"2021-09-02 23:34:21","timeLength":18}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":8,"pageNum":1},"startTime":"2021-09-02 23:39:51","endTime":"2021-09-02 23:39:51","timeLength":33}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":8,"pageNum":1},"startTime":"2021-09-02 23:40:39","endTime":"2021-09-02 23:40:39","timeLength":17}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":8,"pageNum":1},"startTime":"2021-09-02 23:41:10","endTime":"2021-09-02 23:41:10","timeLength":27}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":8,"pageSize":8,"pageNum":1},"startTime":"2021-09-02 23:41:41","endTime":"2021-09-02 23:41:41","timeLength":16}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":8,"pageSize":8,"pageNum":1},"startTime":"2021-09-02 23:44:42","endTime":"2021-09-02 23:44:42","timeLength":17}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":8,"pageNum":1},"startTime":"2021-09-02 23:45:06","endTime":"2021-09-02 23:45:06","timeLength":23}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":8,"pageNum":1},"startTime":"2021-09-02 23:46:35","endTime":"2021-09-02 23:47:50","timeLength":75744}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":8,"pageNum":1},"startTime":"2021-09-02 23:48:05","endTime":"2021-09-02 23:49:44","timeLength":99145}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":8,"pageNum":1},"startTime":"2021-09-02 23:49:48","endTime":"2021-09-02 23:49:51","timeLength":2657}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":1,"pageNum":1},"startTime":"2021-09-02 23:50:31","endTime":"2021-09-02 23:50:31","timeLength":16}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":4,"pageNum":1},"startTime":"2021-09-02 23:50:40","endTime":"2021-09-02 23:50:40","timeLength":8}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":4,"pageNum":1},"startTime":"2021-09-02 23:50:47","endTime":"2021-09-02 23:50:47","timeLength":6}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":4,"pageNum":1},"startTime":"2021-09-02 23:55:28","endTime":"2021-09-02 23:55:28","timeLength":29}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":4,"pageNum":1},"startTime":"2021-09-02 23:57:04","endTime":"2021-09-02 23:57:04","timeLength":19}
+Invalid Date[ httpLog ]{"method":"POST","url":"/api/comment/lists","data":{"houseId":1,"pageSize":4,"pageNum":1},"startTime":"2021-09-02 23:57:39","endTime":"2021-09-02 23:57:39","timeLength":31}

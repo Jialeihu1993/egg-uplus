@@ -12,7 +12,12 @@ module.exports = app => {
     info: STRING(150),
     addres: STRING(300),
     price: INTEGER,
-    publishTime: DATE,
+    publishTime: {
+      type: DATE,
+      get() {
+        return new Date(this.getDataValue('publishTime')).getTime();
+      },
+    },
     cityCode: STRING,
     showCount: INTEGER,
     startTime: DATE,
