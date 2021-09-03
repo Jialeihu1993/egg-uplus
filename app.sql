@@ -65,3 +65,18 @@ INSERT INTO `imgs` VALUES
 (2, 'https://pix8.agoda.net/hotelImages/298/298658/298658_120223135405073.jpg',1, '2020-08-02 14:20:30'),
 (3, 'https://pix8.agoda.net/hotelImages/298/298658/298658_15081411170034272625.png',1, '2020-08-03 14:20:30'),
 (4, 'https://pix8.agoda.net/hotelImages/298/298658/298658_15081411170034272625.png',2, '2020-08-04 14:20:30');
+
+
+
+---订单表
+
+create table `orders` (
+    `id` int not null auto_increment,
+    `orderNumber` varchar(20) default null comment '订单编号',
+    `userId` int not null comment '用户Id',
+    `houseId` int not null comment '房屋Id',
+    `isPayed` int default 0 comment '是否支付，0表示未支付，1表示支付' ,
+    `createTime` timestamp default '0000-00-00 00:00:00' comment '创建时间',
+    `updateTime` timestamp default '0000-00-00 00:00:00' comment '更新时间',
+    primary key(`id`)
+) engine=InnoDB auto_increment=1 default charset=utf8 comment="订单表";
