@@ -1,6 +1,5 @@
 'use strict';
 
-const { prototype } = require('../controller/comment');
 
 module.exports = app => {
   const { STRING, INTEGER, DATE } = app.Sequelize;

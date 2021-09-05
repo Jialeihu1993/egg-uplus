@@ -14,7 +14,7 @@ class UserController extends BaseController {
     const token = app.jwt.sign({ username }, app.config.jwt.secret);
     // ctx.session[username] = 1;
     // await ctx.redis.set(username, 1, 'EX', 5);
-    await ctx.redis.set(username, token, 'EX', app.config.redisExpire);
+    await app.redis.set(username, token, 'EX', app.config.redisExpire);
     return token;
   }
   parseResult(ctx, result) {
@@ -29,7 +29,6 @@ class UserController extends BaseController {
     const token = await this.jwtSign();
     //  const params = ctx.request.body;
     const params = ctx.params();
-    console.log(ctx);
     if (!params.username) {
       ctx.body = {
         status: 500,
@@ -38,7 +37,6 @@ class UserController extends BaseController {
       return;
     }
     const user = await ctx.service.user.getUser(params.username);
-    console.log(user);
     if (user) {
       ctx.body = {
         status: 500,
@@ -52,20 +50,20 @@ class UserController extends BaseController {
       password: MD5(params.password + app.config.salt),
       createTime: ctx.helper.time(),
     });
-    // console.log('+++++++++', reslut);
+    console.log('+++++++++', reslut, ctx.helper.time());
     if (reslut) {
-      // ctx.body = {
-      //   status: 200,
-      //   data: {
-      //     ...ctx.helper.unPick(reslut.dataValues, [ 'password' ]),
-      //     createTime: ctx.helper.timestamp(reslut.createTime),
-      //     token,
-      //   },
-      // };
-      this.success({
-        ...this.parseResult(ctx, reslut),
-        token,
-      });
+      ctx.body = {
+        status: 200,
+        data: {
+          ...ctx.helper.unPick(reslut.dataValues, [ 'password' ]),
+          createTime: ctx.helper.timestamp(reslut.createTime),
+          token,
+        },
+      };
+      // this.success({
+      //   ...this.parseResult(ctx, reslut),
+      //   token,
+      // });
     } else {
       this.error('注册用户失败');
       // ctx.body = {

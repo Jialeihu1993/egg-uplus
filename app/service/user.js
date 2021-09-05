@@ -40,7 +40,6 @@ class UserService extends BaseService {
   }
   async edit(params) {
     return this.run(async ctx => {
-      console.log(ctx, ctx.username);
       const result = await ctx.model.User.update(params, {
         where: {
           username: ctx.username,

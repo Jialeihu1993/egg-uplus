@@ -23,7 +23,7 @@ module.exports = appInfo => {
   };
 
   config.auth = {
-    exclude: [ '/api/user/login', '/api/user/register' ],
+    exclude: [ '/api/user/login', '/api/user/registry' ],
   };
   config.security = {
     csrf: {
