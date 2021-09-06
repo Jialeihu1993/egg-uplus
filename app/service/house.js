@@ -30,7 +30,7 @@ class HouseService extends BaseService {
   async search(params) {
     return this.run(async (ctx, app) => {
       // 小于
-      const { lte, gte } = app.Sequelize.Op;
+      const { lte, gte, like } = app.Sequelize.Op;
       const _where = {
         cityCode: Array.isArray(params.code) ? params.code[0] : params.code,
         startTime: {
@@ -39,7 +39,13 @@ class HouseService extends BaseService {
         endTime: {
           [gte]: params.endTime,
         },
+        name: {
+          [like]: '%' + params.houseName + '%',
+        },
       };
+      if (!params.houseName) {
+        delete _where.name;
+      }
       const result = await ctx.model.House.findAll({
         limit: 4,
         ...this.commonAttr(app),

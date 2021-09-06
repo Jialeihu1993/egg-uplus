@@ -10,7 +10,7 @@ class CommonsController extends BaseController {
     // });
     ctx.body = {
       status: 200,
-      data: [{ key: '北京', value: '100001' }, { key: '上海', value: '100002' }],
+      data: [{ label: '北京', value: '100001' }, { label: '上海', value: '100002' }],
     };
   }
 }
